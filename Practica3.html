@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./Practica3.css">
+    </head>
+    <body>
+
+        <textarea id="textoJS">
+
+        </textarea>
+
+        <div id="formato">
+            <label for="">Color de letra</label>
+            <input type="text" id="colorDeLetra" > <img onclick="cambiarColorDeLetra()" id="img1" src="./images.png"><br>
+            <label>Color de fondo</label>
+            <input id="colorDeFondo" ><img onclick="cambiarColorDeFondo()" src="./images.png"><br>
+            <label>Tamaño de fuente</label>
+            <input id="tamanyo" type="number"><img onclick="cambiarTamanyoDeLetra" id="img3" src="./images.png"><br>
+
+            Negrita<input type="checkbox">
+            Itálica<input type="checkbox">
+            Subrayado<input type="checkbox">
+        </div>
+
+        <script>
+
+            function cambiarColorDeLetra() {
+               
+                var colorDeLetra = document.getElementById("colorDeLetra").style.color;
+
+                document.getElementById("textoJS").style.color = colorDeLetra;
+            }
+
+            function cambiarColorDeFondo() {
+                var colorDeFondo = document.getElementById("colorDeFondo").style.backgroundColor;
+
+                document.getElementById("textoJS").style.backgroundColor = colorDeFondo;
+            }
+
+            function cambiarTamanyoDeLetra() {
+                var tamanyoDeLetra = document.getElementById("tamanyo").style.fontSize;
+
+                document.getElementById("textoJS").style.fontSize = tamanyoDeLetra;
+            }
+
+            document.getElementById("img1").addEventListener("click",function(){cambiarColorDeLetra();});
+            document.getElementById("textoJS").addEventListener("click",function(){cambiarColorDeFondo();});
+            document.getElementById("img3").addEventListener("click",function(){cambiarTamanyoDeLetra();});
+
+
+
+        </script>
+    </body>
+</html>

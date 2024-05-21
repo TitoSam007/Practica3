@@ -1,0 +1,11 @@
+#textoJS{width: 400px;
+    height: 90px;
+    position: absolute;
+    }
+#formato{border: solid 1px darkblue;
+    width: 350px;
+    margin-left: 420px;
+    background-color: rgba(161, 161, 245, 0.973);
+}
+img{width: 20px;
+}
