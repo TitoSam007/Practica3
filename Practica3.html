@@ -1,53 +1,78 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="./Practica3.css">
-    </head>
-    <body>
 
-        <textarea id="textoJS">
+<head>
+    <link rel="stylesheet" href="./Practica3.css">
+</head>
+
+<body>
+
+    <textarea id="textoJS">
 
         </textarea>
 
-        <div id="formato">
+    <div id="formato">
+
+        <div id="colorLetra">
             <label for="">Color de letra</label>
-            <input type="text" id="colorDeLetra" > <img onclick="cambiarColorDeLetra()" id="img1" src="./images.png"><br>
-            <label>Color de fondo</label>
-            <input id="colorDeFondo" ><img onclick="cambiarColorDeFondo()" src="./images.png"><br>
-            <label>Tamaño de fuente</label>
-            <input id="tamanyo" type="number"><img onclick="cambiarTamanyoDeLetra" id="img3" src="./images.png"><br>
-
-            Negrita<input type="checkbox">
-            Itálica<input type="checkbox">
-            Subrayado<input type="checkbox">
+        <input type="text" id="colorDeLetra"> <img onclick="cambiarColorDeLetra()" id="img1" src="./images.png"><br>
         </div>
+        
+        <div id="colorFondo">
+            <label>Color de fondo</label>
+        <input id="colorDeFondo"><img onclick="cambiarColorDeFondo()" src="./images.png"><br>
+        </div>
+    
+        <label>Tamaño de fuente</label>
+        <input id="tamanyo" type="number"><img onclick="cambiarTamanyoDeLetra()" id="img3" src="./images.png"><br>
 
-        <script>
+        Negrita<input id="negrita" type="checkbox" onchange="letraNegrita()">
+        Itálica<input id="italica" type="checkbox" onchange="letraItalica()">
+        Subrayado<input id="subrayado" type="checkbox" onchange="subrayado()">
+    </div>
 
-            function cambiarColorDeLetra() {
-               
-                var colorDeLetra = document.getElementById("colorDeLetra").style.color;
+    <script>
 
-                document.getElementById("textoJS").style.color = colorDeLetra;
-            }
+        function cambiarColorDeLetra() {
+            var colorDeLetra = document.getElementById("colorDeLetra").value;
 
-            function cambiarColorDeFondo() {
-                var colorDeFondo = document.getElementById("colorDeFondo").style.backgroundColor;
+            document.getElementById("textoJS").style.color = colorDeLetra;
+        }
 
-                document.getElementById("textoJS").style.backgroundColor = colorDeFondo;
-            }
+        function cambiarColorDeFondo() {
+            var colorDeFondo = document.getElementById("colorDeFondo").value;
 
-            function cambiarTamanyoDeLetra() {
-                var tamanyoDeLetra = document.getElementById("tamanyo").style.fontSize;
+            document.getElementById("textoJS").style.backgroundColor = colorDeFondo;
+        }
 
-                document.getElementById("textoJS").style.fontSize = tamanyoDeLetra;
-            }
+        function cambiarTamanyoDeLetra() {
+            var tamanyoDeLetra = document.getElementById("tamanyo").value;
 
-            document.getElementById("img1").addEventListener("click",function(){cambiarColorDeLetra();});
-            document.getElementById("textoJS").addEventListener("click",function(){cambiarColorDeFondo();});
-            document.getElementById("img3").addEventListener("click",function(){cambiarTamanyoDeLetra();});
+            document.getElementById("textoJS").style.fontSize = tamanyoDeLetra + 'px';
+        }
+
+        function letraNegrita() {
+
+            document.getElementById("textoJS").style.fontWeight = 'bold';
+        }
+
+        function letraItalica() {
+
+            document.getElementById("textoJS").style.fontStyle = 'italic';
+        }
+
+        function subrayado() {
+
+            document.getElementById("textoJS").style.textDecoration = 'underline';
+        }
+
+        document.getElementById("img1").addEventListener("click", function () { cambiarColorDeLetra(); });
+        document.getElementById("img2").addEventListener("click", function () { cambiarColorDeFondo(); });
+        document.getElementById("img3").addEventListener("click", function () { cambiarTamanyoDeLetra(); });
+        document.getElementById("negrita").addEventListener("click"), function (){}
 
 
 
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
